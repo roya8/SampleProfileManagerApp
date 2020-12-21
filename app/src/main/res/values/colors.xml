@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+<!--solid colors-->
+    <color name="transparent">#000F</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+<!--    Button-->
+    <color name="colorButton">#03C4F4</color>
+    <color name="colorDeleteButton">#E91E63</color>
+    <color name="colorButtonText">#FBFBFB</color>
+
+<!--    textView-->
+    <color name="colorTextViewText">#595A5A</color>
+
+<!--    custom textview with border-->
+    <color name="colorBorderedTextView">#EDF1F1</color>
+    <color name="colorBorderedTextViewText">#DCE1E1</color>
+
+<!--    editText-->
+    <color name="colorEditText">#343535</color>
+    <color name="colorEditTextBorder">#686868</color>
+</resources>

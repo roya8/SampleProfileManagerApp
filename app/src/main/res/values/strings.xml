@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">TestApplication</string>
+
+<!--    textView-->
+    <string name="user_name_text_view">Username:</string>
+    <string name="pass_word_text_view">Password:</string>
+    <string name="full_name_text_view">Full Name:</string>
+    <string name="email_text_view">Email:</string>
+    <string name="email_user_name_text_view">Email/Username:</string>
+    <string name="confirm_pass_word_text_view">Confirm Password:</string>
+    <string name="image_text_view">image:</string>
+
+<!--    button-->
+    <string name="signup_button">Signup</string>
+    <string name="login_button">login</string>
+    <string name="already_have_an_account"><u>Already have an account?</u></string>
+    <string name="edit_profile_photo"><u>Edit profile photo</u></string>
+    <string name="update_button">update</string>
+    <string name="delete_button">delete</string>
+
+
+</resources>

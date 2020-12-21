@@ -1,0 +1,69 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:textSize">@dimen/size_text</item>
+
+        <item name="colorButtonNormal">@color/colorButton</item>
+        <item name="android:textAppearanceButton">@style/TextAppearance.AppCompat.Button.Custom</item>
+
+        <item name="android:textViewStyle">@style/Widget.AppCompat.TextView.Custom</item>
+        <item name="editTextStyle">@style/Widget.AppCompat.EditText.Custom</item>
+
+    </style>
+
+
+<!--    button-->
+    <style name="TextAppearance.AppCompat.Button.Custom">
+        <item name="android:textColor">@color/colorButtonText</item>
+    </style>
+
+<!--    delete button(inside EditUserProfileActivity)-->
+    <style name="TextAppearance.AppCompat.Button.Delete" parent="TextAppearance.AppCompat.Button.Custom">
+        <item name="android:background">@color/colorDeleteButton</item>
+    </style>
+
+
+<!--    image button-->
+    <style name="TextAppearance.AppCompat.ImageButton.Custom" parent="TextAppearance.AppCompat.Button">
+        <item name="android:background">@color/transparent</item>
+
+    </style>
+
+<!--    "Already have an account" button-->
+    <style name="TextAppearance.AppCompat.Button.HaveAccount">
+        <item name="android:textColor">@color/colorButton</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+
+<!--    textview-->
+    <style name="Widget.AppCompat.TextView.Custom" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/colorTextViewText</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+<!--    editText-->
+    <style name="Widget.AppCompat.EditText.Custom" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/colorEditText</item>
+        <item name="android:padding">@dimen/padding_edit_text</item>
+        <item name="android:background">@drawable/edit_text_border</item>
+
+    </style>
+
+
+<!--    TextView with border-->
+    <style name="Widget.AppCompat.TextView.Bordered" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/colorBorderedTextViewText</item>
+        <item name="android:padding">@dimen/padding_edit_text</item>
+        <item name="android:background">@drawable/custom_text_view_border</item>
+
+
+    </style>
+
+</resources>

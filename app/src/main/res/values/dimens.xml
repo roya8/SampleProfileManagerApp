@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!--    general-->
+    <dimen name="size_text">18dp</dimen>
+    <dimen name="margin_default">16dp</dimen>
+
+<!--    layout-->
+    <dimen name="padding_root_layout">16dp</dimen>
+    <dimen name="padding_top_root_layout">32dp</dimen>
+    <dimen name="padding_top_image_button">8dp</dimen>
+
+<!--    editText-->
+    <dimen name="padding_edit_text">16dp</dimen>
+    <dimen name="margin_top_edit_text">8dp</dimen>
+    <dimen name="size_border_edit_text">2dp</dimen>
+    <dimen name="size_corner_radius_edit_text">6dp</dimen>
+
+<!--    textVeiw-->
+    <dimen name="margin_top_text_view">24dp</dimen>
+
+<!--    button-->
+    <dimen name="margin_top_button">24dp</dimen>
+    <dimen name="margin_top_button_signup_activity">32dp</dimen>
+    <dimen name="margin_bottom_button">24dp</dimen>
+    <dimen name="margin_update_delete_buttons">48dp</dimen>
+    <dimen name="width_button">128dp</dimen>
+
+<!--    profile imageView-->
+    <dimen name="size_profile_image_view_large">128dp</dimen>
+    <dimen name="size_profile_image_view_small">64dp</dimen>
+
+<!--    camera imageview-->
+    <dimen name="size_camera_image_view">32dp</dimen>
+
+    <!--    delete icon-->
+    <dimen name="size_delete_image_view">48dp</dimen>
+
+
+</resources>

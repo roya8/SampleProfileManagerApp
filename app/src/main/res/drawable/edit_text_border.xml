@@ -1,0 +1,15 @@
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid
+        android:color="@color/transparent"/>
+
+    <corners
+        android:bottomRightRadius="@dimen/size_corner_radius_edit_text"
+        android:bottomLeftRadius="@dimen/size_corner_radius_edit_text"
+        android:topLeftRadius="@dimen/size_corner_radius_edit_text"
+        android:topRightRadius="@dimen/size_corner_radius_edit_text"/>
+    <stroke
+        android:color="@color/colorEditTextBorder"
+        android:width="@dimen/size_border_edit_text"/>
+</shape>

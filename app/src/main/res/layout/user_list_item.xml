@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/user_profile_image_view"
+            android:layout_width="@dimen/size_profile_image_view_small"
+            android:layout_height="@dimen/size_profile_image_view_small"
+            android:layout_margin="@dimen/margin_default"
+            app:srcCompat="@drawable/ic_icon_user"
+            tools:ignore="VectorDrawableCompat"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:id="@+id/user_name_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Roya"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageButton
+            android:id="@+id/remove_user_image_button"
+            android:layout_width="@dimen/size_delete_image_view"
+            android:layout_height="@dimen/size_delete_image_view"
+            app:srcCompat="@drawable/ic_remove_circle"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/margin_default"
+            tools:ignore="VectorDrawableCompat"
+            style="@style/TextAppearance.AppCompat.ImageButton.Custom"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.LoginActivity"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:paddingLeft="@dimen/padding_root_layout"
+        android:paddingRight="@dimen/padding_root_layout"
+
+        android:paddingTop="@dimen/padding_top_root_layout">
+
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/profile_image_view"
+            android:layout_width="@dimen/size_profile_image_view_large"
+            android:layout_height="@dimen/size_profile_image_view_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_icon_user"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/full_name_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_text_view"
+            android:text="@string/full_name_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_image_view" />
+
+        <EditText
+            android:id="@+id/full_name_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_edit_text"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/full_name_text_view"
+            app:layout_constraintStart_toStartOf="@+id/full_name_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/full_name_text_view" />
+
+        <TextView
+            android:id="@+id/email_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_text_view"
+            android:text="@string/email_user_name_text_view"
+            app:layout_constraintEnd_toEndOf="@+id/full_name_text_view"
+            app:layout_constraintStart_toStartOf="@+id/full_name_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/full_name_edit_text" />
+
+        <EditText
+            android:id="@+id/email_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_edit_text"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/full_name_text_view"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/full_name_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/email_text_view" />
+
+        <TextView
+            android:id="@+id/pass_word_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_text_view"
+            android:text="@string/pass_word_text_view"
+            app:layout_constraintEnd_toEndOf="@+id/full_name_text_view"
+            app:layout_constraintStart_toStartOf="@+id/full_name_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/email_edit_text" />
+
+        <EditText
+            android:id="@+id/pass_word_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_edit_text"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/full_name_text_view"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/full_name_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/pass_word_text_view" />
+
+        <TextView
+            android:id="@+id/confirm_pass_word_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_text_view"
+            android:text="@string/confirm_pass_word_text_view"
+            app:layout_constraintEnd_toEndOf="@+id/full_name_text_view"
+            app:layout_constraintStart_toStartOf="@+id/full_name_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/pass_word_edit_text" />
+
+        <EditText
+            android:id="@+id/confirm_pass_word_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_edit_text"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/full_name_text_view"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/full_name_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/confirm_pass_word_text_view" />
+
+        <Button
+            android:id="@+id/signup_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_top_button_signup_activity"
+            android:layout_marginTop="@dimen/margin_top_button_signup_activity"
+            android:text="@string/signup_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/email_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/image_text_view" />
+
+        <TextView
+            android:id="@+id/image_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_text_view"
+            android:text="@string/image_text_view"
+            app:layout_constraintStart_toStartOf="@+id/email_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/confirm_pass_word_edit_text" />
+
+        <ImageView
+            android:id="@+id/camera_image_view"
+            android:layout_width="@dimen/size_camera_image_view"
+            android:layout_height="@dimen/size_camera_image_view"
+            android:layout_marginLeft="@dimen/margin_default"
+            android:layout_marginStart="@dimen/margin_default"
+            app:layout_constraintBottom_toBottomOf="@+id/image_text_view"
+            app:layout_constraintStart_toEndOf="@+id/image_text_view"
+            app:layout_constraintTop_toTopOf="@+id/image_text_view"
+            app:srcCompat="@drawable/ic_camera"
+            tools:ignore="VectorDrawableCompat" />
+
+        <Button
+            android:id="@+id/update_image_button"
+            style="@style/TextAppearance.AppCompat.Button.HaveAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/already_have_an_account"
+            app:layout_constraintBottom_toBottomOf="@+id/signup_button"
+            app:layout_constraintStart_toStartOf="@+id/image_text_view"
+            app:layout_constraintTop_toTopOf="@+id/signup_button" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
