@@ -44,12 +44,15 @@ public class LoginViewModelImp extends AndroidViewModel implements LoginViewMode
                 boolean usernameIsValid = UsernameValidator.validateUsername(usernameOREmail);
                 boolean passwordIsValid = PasswordValidator.validatePassword(password);
 
+
+
+
                 if(usernameIsEmpty || passwordIsEmpty){
                     emitter.onError(new LoginException("Please enter your username/email and password, these fields can't be empty."));
 
                 }
                 else if(!usernameIsValid){
-                    emitter.onError(new LoginException("Enter  username or email, this field can't be empty."));
+                    emitter.onError(new LoginException("Username is not valid."));
 
                 }
                 else if(!passwordIsValid){

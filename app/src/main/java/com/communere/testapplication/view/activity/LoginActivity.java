@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.communere.testapplication.R;
 import com.communere.testapplication.exception.LoginException;
+import com.communere.testapplication.model.Bean.Admin;
 import com.communere.testapplication.util.AlertDialogUtil;
 import com.communere.testapplication.viewmodel.LoginViewModel;
 import com.communere.testapplication.viewmodel.LoginViewModelImp;
@@ -71,7 +72,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(user -> {
                     Log.d(TAG, user.toString());
-                            goToUserProfileActivity(user.getId());
+
+
+                    if(user.getUsername().equals(Admin.getUsername())){  //Admin user logins
+                        goToUserListActivity();
+                    }
+                    else { //Regular user logins
+                        goToUserProfileActivity(user.getId());
+                    }
 
                         }, exception ->
 //                        Toast.makeText(this, ((LoginException) exception).getMessage(), Toast.LENGTH_LONG ).show()
@@ -94,6 +102,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void goToUserProfileActivity(long userId) {
         Intent intent = new Intent(LoginActivity.this, EditUserProfileActivity.class);
         intent.putExtra("id", userId);
+        startActivity(intent);
+        LoginActivity.this.finish();
+    }
+
+    private void goToUserListActivity() {
+        Intent intent = new Intent(LoginActivity.this, UserListActivity.class);
         startActivity(intent);
         LoginActivity.this.finish();
     }

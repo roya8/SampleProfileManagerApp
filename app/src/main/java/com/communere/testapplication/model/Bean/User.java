@@ -3,6 +3,7 @@ package com.communere.testapplication.model.Bean;
 import java.util.Objects;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "user_table")
@@ -25,11 +26,16 @@ public class User {
     //**************************************************************************************************
     //constructor
 
-    public User(String fullName, String username, String email, String password, String image) {
-        this.fullName = fullName;
+    @Ignore
+    public User(String username, String password) {
         this.username = username;
-        this.email = email;
         this.password = password;
+    }
+
+    public User(String fullName, String username, String email, String password, String image) {
+        this(username, password);
+        this.fullName = fullName;
+        this.email = email;
         this.image = image;
     }
 
