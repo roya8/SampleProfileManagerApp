@@ -21,4 +21,7 @@ public interface UserRepository {
     public LiveData<User> getUser(long id);
 
     public LiveData<List<User>> getAllUsers();
+
+    public Single<User> getUser(String usernameOrEmail, String pass);
+
 }

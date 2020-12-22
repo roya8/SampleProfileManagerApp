@@ -12,6 +12,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 import io.reactivex.Completable;
+import io.reactivex.Single;
 
 @Dao
 public interface UserDao {
@@ -30,6 +31,9 @@ public interface UserDao {
 
     @Query("SELECT * FROM user_table WHERE id = :userID")
     LiveData<User> getUser(long userID);
+
+    @Query("SELECT * FROM user_table WHERE ( username = :usernameOrEmail  OR email = :usernameOrEmail )  AND password LIKE :pass")
+    Single<User> getUser(String usernameOrEmail, String pass);
 
 
     @Query("SELECT * FROM user_table")

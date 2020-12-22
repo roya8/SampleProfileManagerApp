@@ -53,4 +53,10 @@ public class UserRepositoryImp implements UserRepository {
     public LiveData<List<User>> getAllUsers(){
         return userList;
     }
+
+
+    public Single<User> getUser(String usernameOrEmail, String pass){
+        return userDao.getUser(usernameOrEmail, pass);
+    }
+
 }
