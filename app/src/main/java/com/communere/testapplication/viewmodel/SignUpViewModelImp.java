@@ -58,9 +58,8 @@ public class SignUpViewModelImp extends AndroidViewModel implements SignUpViewMo
                 else if(!passwordsAreMatched){
                     emitter.onError(new SignupException("Passwords are not matched, please confirm password again."));
                 }
-                else if(!emailIsEmpty){
-                    if(!emailIsValid)
-                        emitter.onError(new SignupException("Email is not valid."));
+                else if(!emailIsEmpty && !emailIsValid) {
+                    emitter.onError(new SignupException("Email is not valid."));
 
                 }
                 else {
