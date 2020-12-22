@@ -104,8 +104,7 @@ public class UserListActivity extends AppCompatActivity {
                 }
                 else{
 
-                    goToUserProfileActivity(user.getId());
-
+                    goToReadOnlyUserActivity(user.getId());
 
                 }
 
@@ -117,13 +116,11 @@ public class UserListActivity extends AppCompatActivity {
     }
 
 
-
-//
-//    private void goToEditUserProfileActivity(long userId) {
-//        Intent intent = new Intent(UserListActivity.this, EditUserProfileActivity.class);
-//        intent.putExtra("id", userId);
-//        startActivity(intent);
-//        UserListActivity.this.finish();
-//    }
+    private void goToReadOnlyUserActivity(long userId) {
+        Intent intent = new Intent(UserListActivity.this, ReadOnlyUserActivity.class);
+        intent.putExtra("id", userId);
+        startActivity(intent);
+        UserListActivity.this.finish();
+    }
 
 }

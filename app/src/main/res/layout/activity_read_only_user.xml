@@ -20,15 +20,15 @@
 
 
     <TextView
-        android:id="@+id/full_name_edit_text"
-        android:layout_width="wrap_content"
+        android:id="@+id/full_name_text_view"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin_default"
         android:layout_marginStart="@dimen/margin_default"
         android:text="Fullname"
         app:layout_constraintBottom_toBottomOf="@+id/profile_image_view"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/profile_image_view"
-        app:layout_constraintTop_toTopOf="@+id/profile_image_view"/>
+        app:layout_constraintTop_toTopOf="@+id/profile_image_view" />
 
 
     <TextView
@@ -45,7 +45,8 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_image_view" />
 
     <TextView
-        android:id="@+id/user_name_edit_text"
+        android:id="@+id/user_name_readonly_text_view"
+        style="@style/Widget.AppCompat.TextView.Bordered"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -57,8 +58,8 @@
         android:text=""
         app:layout_constraintEnd_toEndOf="@+id/user_name_text_view"
         app:layout_constraintStart_toStartOf="@+id/user_name_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/user_name_text_view"
-        style="@style/Widget.AppCompat.TextView.Bordered"/>
+        app:layout_constraintTop_toBottomOf="@+id/user_name_text_view" />
+
 
     <TextView
         android:id="@+id/email_text_view"
@@ -68,13 +69,13 @@
         android:layout_marginTop="@dimen/margin_top_text_view"
         android:text="@string/confirm_pass_word_text_view"
         app:layout_constraintEnd_toEndOf="@+id/user_name_text_view"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/user_name_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/user_name_edit_text" />
-
+        app:layout_constraintTop_toBottomOf="@+id/user_name_readonly_text_view" />
 
     <TextView
-        android:id="@+id/email_edit_text"
+        android:id="@+id/email_readonly_text_view"
+        style="@style/Widget.AppCompat.TextView.Bordered"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -84,8 +85,7 @@
         android:ems="10"
         app:layout_constraintEnd_toEndOf="@+id/user_name_text_view"
         app:layout_constraintStart_toStartOf="@+id/user_name_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/email_text_view"
-        style="@style/Widget.AppCompat.TextView.Bordered"/>
+        app:layout_constraintTop_toBottomOf="@+id/email_text_view" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
