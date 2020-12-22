@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import io.reactivex.Completable;
+import io.reactivex.Single;
 
 class UsersViewModelImp extends AndroidViewModel implements UsersViewModel {
 
@@ -28,7 +29,7 @@ class UsersViewModelImp extends AndroidViewModel implements UsersViewModel {
 
 
 
-    public Completable addUser(User user){
+    public Single<Long> addUser(User user){
 
         return userRepository.insert(user);
 

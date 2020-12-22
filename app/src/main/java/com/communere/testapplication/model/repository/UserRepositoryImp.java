@@ -25,7 +25,7 @@ public class UserRepositoryImp implements UserRepository {
 
     //**************************************************************************************************
     //**************************************************************************************************
-    public Completable insert(User user){
+    public Single<Long> insert(User user){
 
         return userDao.insert(user);
     }

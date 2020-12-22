@@ -9,9 +9,9 @@ import androidx.room.PrimaryKey;
 public class User {
 
     @PrimaryKey(autoGenerate = true)
-    private int id;
+    private long id;
 
-    private int fullName;
+    private String fullName;
 
     private String username;
 
@@ -25,7 +25,7 @@ public class User {
     //**************************************************************************************************
     //constructor
 
-    public User(int fullName, String username, String email, String password, String image) {
+    public User(String fullName, String username, String email, String password, String image) {
         this.fullName = fullName;
         this.username = username;
         this.email = email;
@@ -38,7 +38,7 @@ public class User {
     //**************************************************************************************************
     //setters
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -46,11 +46,11 @@ public class User {
     //**************************************************************************************************
     //getters
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public int getFullName() {
+    public String getFullName() {
         return fullName;
     }
 

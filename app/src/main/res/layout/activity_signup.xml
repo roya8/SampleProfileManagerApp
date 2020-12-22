@@ -148,7 +148,7 @@
             tools:ignore="VectorDrawableCompat" />
 
         <Button
-            android:id="@+id/update_image_button"
+            android:id="@+id/login_button"
             style="@style/TextAppearance.AppCompat.Button.HaveAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

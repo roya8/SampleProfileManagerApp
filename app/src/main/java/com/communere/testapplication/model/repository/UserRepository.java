@@ -10,7 +10,7 @@ import io.reactivex.Single;
 
 public interface UserRepository {
 
-    public Completable insert(User user);
+    public Single<Long> insert(User user);
 
     public Completable update(User user);
 

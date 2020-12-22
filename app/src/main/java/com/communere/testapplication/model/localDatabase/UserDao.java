@@ -18,7 +18,7 @@ import io.reactivex.Single;
 public interface UserDao {
 
     @Insert
-    Completable insert(User user);
+    Single<Long> insert(User user);
 
     @Update
     Completable update(User user);
