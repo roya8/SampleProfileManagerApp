@@ -71,7 +71,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(user -> {
                     Log.d(TAG, user.toString());
-                }, exception ->
+                            goToUserProfileActivity(user.getId());
+
+                        }, exception ->
 //                        Toast.makeText(this, ((LoginException) exception).getMessage(), Toast.LENGTH_LONG ).show()
                         AlertDialogUtil.showSimpleAlertDialog(LoginActivity.this, ((LoginException) exception).getMessage())
                 );
@@ -85,6 +87,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void goToSignUpActivity() {
         Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+        startActivity(intent);
+        LoginActivity.this.finish();
+    }
+
+    private void goToUserProfileActivity(long userId) {
+        Intent intent = new Intent(LoginActivity.this, EditUserProfileActivity.class);
+        intent.putExtra("id", userId);
         startActivity(intent);
         LoginActivity.this.finish();
     }

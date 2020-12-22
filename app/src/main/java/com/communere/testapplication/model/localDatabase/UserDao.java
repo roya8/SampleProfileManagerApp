@@ -38,4 +38,9 @@ public interface UserDao {
 
     @Query("SELECT * FROM user_table")
     LiveData<List<User>> getAllUsers();
+
+    @Query("SELECT COUNT(*) from user_table WHERE username = :userName")
+    Single<Integer> getUserCount(String userName);
+
+
 }

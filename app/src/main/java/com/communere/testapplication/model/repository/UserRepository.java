@@ -24,4 +24,7 @@ public interface UserRepository {
 
     public Single<User> getUser(String usernameOrEmail, String pass);
 
+    public Single<Integer> getUserCount(String userName);
+
+
 }

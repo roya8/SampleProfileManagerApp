@@ -59,4 +59,10 @@ public class UserRepositoryImp implements UserRepository {
         return userDao.getUser(usernameOrEmail, pass);
     }
 
+    public Single<Integer> getUserCount(String userName){
+        return userDao.getUserCount(userName);
+    }
+
+
+
 }

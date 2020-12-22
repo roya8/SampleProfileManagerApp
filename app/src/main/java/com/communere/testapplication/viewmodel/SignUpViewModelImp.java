@@ -1,6 +1,7 @@
 package com.communere.testapplication.viewmodel;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.communere.testapplication.exception.LoginException;
 import com.communere.testapplication.exception.SignupException;
@@ -17,8 +18,10 @@ import io.reactivex.Single;
 import io.reactivex.SingleEmitter;
 import io.reactivex.SingleOnSubscribe;
 
-public class SignUpViewModelImp extends AndroidViewModel implements SignUpViewModel<User> {
+public class SignUpViewModelImp extends AndroidViewModel implements SignUpViewModel {
 
+
+    private static final String TAG = "SignUpViewModelImp";
 
     private UserRepository userRepository;
 
@@ -62,10 +65,29 @@ public class SignUpViewModelImp extends AndroidViewModel implements SignUpViewMo
                 }
                 else {
 
-                    (userRepository.insert(user)).subscribe(userId -> {
+                    //Check if user already exists
+                    (userRepository.getUserCount(user.getUsername()))
+                            .subscribe(count -> {
+                                if(count > 0)
+                                    emitter.onError(new SignupException("You can't use this username, it has been already taken."));
+
+                            }, throwable -> {
+                                Log.d(TAG, throwable.getMessage());
+                            }
+                    );
+
+                    //**************************************************************************************************
+
+                    //add user if not exists
+                    (userRepository.insert(user))
+                            .subscribe(userId -> {
                         user.setId(userId);
                         emitter.onSuccess(user);
-                    }, throwable -> emitter.onError(new SignupException("Signup failed.")));
+                    }, throwable -> {
+                        throwable.printStackTrace();
+                        emitter.onError(new SignupException("Signup failed."));
+                    }
+                    );
                 }
 
             }

@@ -84,6 +84,8 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(user -> {
                                     Log.d(TAG, user.toString());
+                                    goToUserProfileActivity(user.getId());
+
                                 }, exception ->
                                         AlertDialogUtil.showSimpleAlertDialog(SignupActivity
                                                 .this, ((SignupException) exception).getMessage())
@@ -100,6 +102,12 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
     private void goToLoginActivity() {
         Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+        startActivity(intent);
+        SignupActivity.this.finish();
+    }
+    private void goToUserProfileActivity(long userId) {
+        Intent intent = new Intent(SignupActivity.this, EditUserProfileActivity.class);
+        intent.putExtra("id", userId);
         startActivity(intent);
         SignupActivity.this.finish();
     }

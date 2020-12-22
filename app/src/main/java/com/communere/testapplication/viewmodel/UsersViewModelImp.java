@@ -14,7 +14,7 @@ import androidx.lifecycle.LiveData;
 import io.reactivex.Completable;
 import io.reactivex.Single;
 
-class UsersViewModelImp extends AndroidViewModel implements UsersViewModel {
+public class UsersViewModelImp extends AndroidViewModel implements UsersViewModel {
 
 
     private UserRepository userRepository;
@@ -25,25 +25,6 @@ class UsersViewModelImp extends AndroidViewModel implements UsersViewModel {
         super(application);
         userRepository = new UserRepositoryImp(application);
         userList = userRepository.getAllUsers();
-    }
-
-
-
-    public Single<Long> addUser(User user){
-
-        return userRepository.insert(user);
-
-//        Completable.fromAction(() -> userRepository.insert(user)
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(()-> // completed with success,
-//                        throwable -> // there was an error
-//                );
-    }
-
-    public Completable updateUser(User toDo){
-
-        return userRepository.update(toDo);
     }
 
     public Completable removeUser(User toDo) {

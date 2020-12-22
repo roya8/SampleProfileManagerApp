@@ -19,7 +19,7 @@ import io.reactivex.SingleEmitter;
 import io.reactivex.SingleOnSubscribe;
 import io.reactivex.schedulers.Schedulers;
 
-public class LoginViewModelImp extends AndroidViewModel implements LoginViewModel<User> {
+public class LoginViewModelImp extends AndroidViewModel implements LoginViewModel{
 
 
     private UserRepository userRepository;
@@ -45,7 +45,7 @@ public class LoginViewModelImp extends AndroidViewModel implements LoginViewMode
                 boolean passwordIsValid = PasswordValidator.validatePassword(password);
 
                 if(usernameIsEmpty || passwordIsEmpty){
-                    emitter.onError(new LoginException("Pleade enter your username/email and password, these fields can't be empty."));
+                    emitter.onError(new LoginException("Please enter your username/email and password, these fields can't be empty."));
 
                 }
                 else if(!usernameIsValid){

@@ -8,14 +8,12 @@ import androidx.lifecycle.LiveData;
 import io.reactivex.Completable;
 import io.reactivex.Single;
 
-interface UsersViewModel {
+public interface UsersViewModel {
 
 
     LiveData<List<User>> getUserList();
 
     LiveData<User> getUser(long id);
-    Single<Long> addUser(User user);
     Completable removeUser(User user);
-    Completable updateUser(User user);
 
 }
