@@ -92,6 +92,8 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                         );
                 break;
 
+
+
             case R.id.login_button:
                 goToLoginActivity();
                 break;

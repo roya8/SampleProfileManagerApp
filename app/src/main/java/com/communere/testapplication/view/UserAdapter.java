@@ -10,18 +10,18 @@ import android.widget.TextView;
 import com.communere.testapplication.R;
 import com.communere.testapplication.model.Bean.User;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
+import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
+public class UserAdapter extends ListAdapter<User, UserAdapter.UserHolder> {
 
     private static final String TAG = "UserAdapter";
-
-    Context context;
-    private List<User> users = new ArrayList<>();
 
     //**************************************************************************************************
     //ClickListener
@@ -37,14 +37,26 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
     }
     //**************************************************************************************************
 
-
-
-
-    public UserAdapter(Context context, List<User> users) {
-        this.context = context;
-        this.users = users;
+    //constructor
+    public UserAdapter() {
+        super(diffCallback);
     }
 
+    private static final DiffUtil.ItemCallback<User> diffCallback = new DiffUtil.ItemCallback<User>() {
+        @Override
+        public boolean areItemsTheSame(@NonNull User oldItem, @NonNull User newItem) {
+            return oldItem.getId() == newItem.getId();
+//            return false;
+        }
+
+        @Override
+        public boolean areContentsTheSame(@NonNull User oldItem, @NonNull User newItem) {
+            return oldItem.equals(newItem);
+//            return false;
+        }
+    };
+
+    //**************************************************************************************************
     @NonNull
     @Override
     public UserHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -57,19 +69,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
     @Override
     public void onBindViewHolder(@NonNull UserHolder holder, int position) {
 
-        User currentUser = users.get(position);
+        User currentUser = getItem(position);
         holder.usernameTextView.setText(currentUser.getUsername());
-    }
-
-    @Override
-    public int getItemCount() {
-        return users.size();
-    }
-
-
-    public void setUsers(List<User> users){
-        this.users = users;
-        notifyDataSetChanged();
     }
 
     class UserHolder extends RecyclerView.ViewHolder{
@@ -96,7 +97,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
                     if (listItemClickListener != null) {
                         int position = getAdapterPosition();
                         if (position != RecyclerView.NO_POSITION) {
-                            listItemClickListener.onItemClicked(itemView, users.get(position));
+                            listItemClickListener.onItemClicked(itemView, getItem(position));
                         }
                     }
                 }
@@ -109,7 +110,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
                     if (listItemClickListener != null) {
                         int position = getAdapterPosition();
                         if (position != RecyclerView.NO_POSITION) {
-                            listItemClickListener.onItemClicked(deleteButton, users.get(position));
+                            listItemClickListener.onItemClicked(deleteButton, getItem(position));
                         }
                     }
                 }

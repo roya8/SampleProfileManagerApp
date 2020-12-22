@@ -19,7 +19,7 @@
 
 <!--    custom textview with border-->
     <color name="colorBorderedTextView">#EDF1F1</color>
-    <color name="colorBorderedTextViewText">#DCE1E1</color>
+    <color name="colorBorderedTextViewText">#6E7070</color>
 
 <!--    editText-->
     <color name="colorEditText">#343535</color>

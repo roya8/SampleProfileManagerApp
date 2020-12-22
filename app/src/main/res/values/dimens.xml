@@ -2,8 +2,9 @@
 <resources>
 
 <!--    general-->
-    <dimen name="size_text">18dp</dimen>
+    <dimen name="size_text">20dp</dimen>
     <dimen name="margin_default">16dp</dimen>
+    <dimen name="margin_user_list_item">8dp</dimen>
 
 <!--    layout-->
     <dimen name="padding_root_layout">16dp</dimen>
@@ -23,18 +24,18 @@
     <dimen name="margin_top_button">24dp</dimen>
     <dimen name="margin_top_button_signup_activity">32dp</dimen>
     <dimen name="margin_bottom_button">24dp</dimen>
-    <dimen name="margin_update_delete_buttons">48dp</dimen>
+    <dimen name="margin_update_delete_buttons">32dp</dimen>
     <dimen name="width_button">128dp</dimen>
 
 <!--    profile imageView-->
     <dimen name="size_profile_image_view_large">128dp</dimen>
-    <dimen name="size_profile_image_view_small">64dp</dimen>
+    <dimen name="size_profile_image_view_small">72dp</dimen>
 
 <!--    camera imageview-->
     <dimen name="size_camera_image_view">32dp</dimen>
 
     <!--    delete icon-->
-    <dimen name="size_delete_image_view">48dp</dimen>
+    <dimen name="size_delete_image_view">36dp</dimen>
 
 
 </resources>

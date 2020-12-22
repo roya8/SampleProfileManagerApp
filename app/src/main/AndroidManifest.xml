@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".view.activity.ReadOnlyUserActivity"></activity>
-        <activity android:name=".view.activity.UserListActivity" />
+        <activity android:name=".view.activity.UserListActivity"
+            android:launchMode="singleTop"/>
         <activity android:name=".view.activity.EditUserProfileActivity" />
         <activity android:name=".view.activity.SignupActivity" />
         <activity android:name=".view.activity.LoginActivity">

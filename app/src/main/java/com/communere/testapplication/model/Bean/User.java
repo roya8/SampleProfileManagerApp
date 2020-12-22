@@ -89,19 +89,20 @@ public class User {
     //**************************************************************************************************
     //equals & hashmap
 
+    //username is unique and not null
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User userInfo = (User) o;
-        return id == userInfo.id &&
-                Objects.equals(username, userInfo.username);
+        User user = (User) o;
+        return Objects.equals(username, user.username);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username);
+        return Objects.hash(username);
     }
+
 
     //**************************************************************************************************
     //**************************************************************************************************

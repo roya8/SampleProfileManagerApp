@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/list_card_view"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-
         <com.mikhaellopez.circularimageview.CircularImageView
             android:id="@+id/user_profile_image_view"
             android:layout_width="@dimen/size_profile_image_view_small"
             android:layout_height="@dimen/size_profile_image_view_small"
-            android:layout_margin="@dimen/margin_default"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/margin_user_list_item"
             app:srcCompat="@drawable/ic_icon_user"
-            tools:ignore="VectorDrawableCompat"
-            android:layout_gravity="center_vertical" />
+            tools:ignore="VectorDrawableCompat" />
 
         <TextView
             android:id="@+id/username_text_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="Roya"
-            android:layout_gravity="center_vertical"/>
+            android:text="Roya" />
 
         <ImageButton
             android:id="@+id/remove_user_image_button"
+            style="@style/TextAppearance.AppCompat.ImageButton.Custom"
             android:layout_width="@dimen/size_delete_image_view"
             android:layout_height="@dimen/size_delete_image_view"
-            app:srcCompat="@drawable/ic_remove_circle"
             android:layout_gravity="center_vertical"
-            android:layout_margin="@dimen/margin_default"
-            tools:ignore="VectorDrawableCompat"
-            style="@style/TextAppearance.AppCompat.ImageButton.Custom"/>
+            android:layout_margin="@dimen/margin_user_list_item"
+            android:background="@drawable/ic_remove_circle"
+            tools:ignore="VectorDrawableCompat" />
+
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -2,6 +2,7 @@ package com.communere.testapplication.view.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -55,7 +56,7 @@ public class UserListActivity extends AppCompatActivity {
         users.observe(this, new Observer<List<User>>() {
             @Override
             public void onChanged(List<User> users) {
-                userAdapter.setUsers(users);
+                userAdapter.submitList(users);
 
             }
         });
@@ -72,7 +73,8 @@ public class UserListActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView = (RecyclerView) findViewById(R.id.users_recycler_view);
         recyclerView.setLayoutManager(linearLayoutManager);
-        userAdapter = new UserAdapter(this, new ArrayList<>());
+        userAdapter= new UserAdapter();
+
         recyclerView.setAdapter(userAdapter);
 
         handleRecyclerVeiwItemClick();
@@ -82,13 +84,13 @@ public class UserListActivity extends AppCompatActivity {
 
         userAdapter.setItemClickListener(new UserAdapter.ListItemClickListener() {
             @Override
-            public void onItemClicked(View itemView, User user) {
+            public void onItemClicked(View view, User user) {
 
 
-                final long viewId = itemView.getId();
+                final long viewId = view.getId();
                 Log.d("filter_viewId", String.valueOf(viewId));
 
-                if(viewId == R.id.delete_button){
+                if(viewId == R.id.remove_user_image_button){
 
                     viewModel.removeUser(user)
                             .subscribeOn(Schedulers.io())
@@ -103,7 +105,7 @@ public class UserListActivity extends AppCompatActivity {
 
                 }
                 else{
-
+                    
                     goToReadOnlyUserActivity(user.getId());
 
                 }
@@ -120,7 +122,6 @@ public class UserListActivity extends AppCompatActivity {
         Intent intent = new Intent(UserListActivity.this, ReadOnlyUserActivity.class);
         intent.putExtra("id", userId);
         startActivity(intent);
-        UserListActivity.this.finish();
     }
 
 }
