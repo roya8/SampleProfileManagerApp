@@ -6,7 +6,9 @@ import android.util.Patterns;
 public class PasswordValidator {
 
     public static boolean validatePassword(String password){
-        String pattern = "^(?=.*[0-9])(?=.*[A-Z])(?=\\S+$).{8,}$";
+
+        //Password length must be at least 6 and it must contain numerical and capital values
+        String pattern = "^(?=.*[0-9])(?=.*[A-Z])(?=\\S+$).{6,}$";
 
         return (!(password == null) && !isEmpty(password) && password.matches(pattern));
     }

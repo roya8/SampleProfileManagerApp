@@ -8,6 +8,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.communere.testapplication.R;
+import com.communere.testapplication.model.Bean.Admin;
 import com.communere.testapplication.model.Bean.User;
 
 
@@ -71,6 +72,17 @@ public class UserAdapter extends ListAdapter<User, UserAdapter.UserHolder> {
 
         User currentUser = getItem(position);
         holder.usernameTextView.setText(currentUser.getUsername());
+
+        //Admin user can't get deleted
+//        if(currentUser.getUsername().equals(Admin.getUsername())){
+//            holder.deleteButton.setVisibility(View.GONE);
+//        }
+//        else{
+//            holder.deleteButton.setVisibility(View.VISIBLE);
+//
+//        }
+
+
     }
 
     class UserHolder extends RecyclerView.ViewHolder{

@@ -105,7 +105,7 @@ public class UserListActivity extends AppCompatActivity {
 
                 }
                 else{
-                    
+
                     goToReadOnlyUserActivity(user.getId());
 
                 }

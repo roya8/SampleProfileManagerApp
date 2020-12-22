@@ -35,11 +35,8 @@ public abstract class UserDatabase extends RoomDatabase{
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
 
-
-            //Create the admin user and add it to database once database created
-//            User adminUser = new User("", Admin.getUsername(),"", Admin.getPassword(), "");
-            User adminUser = new User(Admin.getUsername(), Admin.getPassword());
-            instance.getUserDao().insert(adminUser);
+//            User adminUser = new User(Admin.getUsername(), Admin.getPassword());
+//            instance.getUserDao().insert(adminUser);
         }
     };
 

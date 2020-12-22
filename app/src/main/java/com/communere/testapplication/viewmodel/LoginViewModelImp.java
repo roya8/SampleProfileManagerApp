@@ -4,6 +4,7 @@ import android.app.Application;
 import android.util.Log;
 
 import com.communere.testapplication.exception.LoginException;
+import com.communere.testapplication.model.Bean.Admin;
 import com.communere.testapplication.model.Bean.User;
 import com.communere.testapplication.model.repository.UserRepository;
 import com.communere.testapplication.model.repository.UserRepositoryImp;
@@ -61,9 +62,16 @@ public class LoginViewModelImp extends AndroidViewModel implements LoginViewMode
                 }
                 else {
 
-                    (userRepository.getUser(usernameOREmail, password)).subscribe(user -> {
-                        emitter.onSuccess(user);
-                    }, throwable -> emitter.onError(new LoginException("User does not exist, Please sign up first then try again.")));
+                    //if loging as admin user, don't check if user exists in database
+                    if(usernameOREmail.equals(Admin.getUsername()))
+                        emitter.onSuccess(new User(Admin.getUsername(), Admin.getPassword()));
+
+                    else {
+                        (userRepository.getUser(usernameOREmail, password)).subscribe(user -> {
+                            emitter.onSuccess(user);
+                        }, throwable -> emitter.onError(new LoginException("User does not exist, Please sign up first then try again.")));
+                    }
+
                 }
 
             }
