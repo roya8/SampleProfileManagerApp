@@ -3,8 +3,7 @@ package com.communere.testapplication.model.Bean;
 public class Admin {
 
     private static String username = "admin";
-    private static String password = "Admin0" +
-            "";
+    private static String password = "Admin0";
 
     //**************************************************************************************************
     //**************************************************************************************************

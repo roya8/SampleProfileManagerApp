@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_top_edit_text"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="@+id/full_name_text_view"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/full_name_text_view"
